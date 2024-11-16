@@ -16,7 +16,7 @@ export const useStaffStore = defineStore('staff', () => {
     const loadDoctors = async () => {
         loadingDoctors.value = true;
         try {
-            const response = await axios.get('/src/mock/doctors.json');
+            const response = await axios.get('/mock/doctors.json');
             doctors.value = response.data;
             snackbarStore.showSnackbar('Список врачов загрузилось успешно', SnackbarStatus.SUCCESS)
         } catch (error) {
@@ -29,7 +29,7 @@ export const useStaffStore = defineStore('staff', () => {
     const loadNurses = async () => {
         loadingNurses.value = true;
         try {
-            const response = await axios.get('/src/mock/nurses.json');
+            const response = await axios.get('/mock/nurses.json');
             nurses.value = response.data;
             snackbarStore.showSnackbar('Список медсестер загрузилось успешно', SnackbarStatus.SUCCESS)
         } catch (error) {
