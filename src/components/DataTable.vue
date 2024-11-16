@@ -18,7 +18,7 @@
         <td class="border border-gray-300 px-4 py-2 text-gray-800">{{ person.name }}</td>
         <td class="border border-gray-300 px-4 py-2 text-gray-800">{{ person.department }}</td>
         <td v-if="isDoctor" class="border border-gray-300 px-4 py-2 text-gray-800">
-          {{ person.isHead ? 'Да' : 'Нет' }}
+          {{ (person as Doctor).isHead ? 'Да' : 'Нет' }}
         </td>
         <td class="border border-gray-300 px-4 py-2 text-gray-800 flex gap-2">
           <button

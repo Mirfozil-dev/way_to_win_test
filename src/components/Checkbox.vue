@@ -1,10 +1,9 @@
 <template>
   <label class="flex items-center space-x-3 cursor-pointer">
     <input
+        v-model="model"
         type="checkbox"
         class="hidden peer"
-        :checked="model"
-        @change="$emit('update:modelValue', $event.target.checked)"
     />
     <div
         class="w-5 h-5 border-2 border-gray-400 rounded-lg flex justify-center items-center peer-checked:border-blue-500 peer-checked:bg-blue-500 transition hover:border-blue-500 hover:bg-blue-100 focus:ring-2 focus:ring-blue-500"
@@ -28,9 +27,9 @@
 <script setup lang="ts">
 import { defineProps } from "vue";
 
-const model = defineModel<boolean>()
-
 defineProps({
   label: String,
 });
+
+const model = defineModel<boolean>()
 </script>
